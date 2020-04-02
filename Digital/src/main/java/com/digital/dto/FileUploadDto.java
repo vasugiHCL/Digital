@@ -3,7 +3,7 @@ package com.digital.dto;
 public class FileUploadDto {
 	
 	private Long userId;
-	private String aadharNo;
+	
 	private String dob;
 	private String emailId;
 	private String firstName;
@@ -15,12 +15,7 @@ public class FileUploadDto {
 	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
-	public String getAadharNo() {
-		return aadharNo;
-	}
-	public void setAadharNo(String aadharNo) {
-		this.aadharNo = aadharNo;
-	}
+	
 	public String getDob() {
 		return dob;
 	}
