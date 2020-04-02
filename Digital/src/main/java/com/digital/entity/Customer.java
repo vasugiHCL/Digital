@@ -16,17 +16,15 @@ public class Customer {
 	private String firstName;
 	private String lastName;
 	private String dob;
-	private String aadharNo;
 	private String gender;
 	
 	
 
-	public Customer(String firstName, String lastName, String dob, String aadharNo, String gender) {
+	public Customer(String firstName, String lastName, String dob,String gender) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.dob = dob;
-		this.aadharNo = aadharNo;
 		this.gender = gender;
 	}
 
@@ -75,13 +73,6 @@ public class Customer {
 		this.dob = dob;
 	}
 
-	public String getAadharNo() {
-		return aadharNo;
-	}
-
-	public void setAadharNo(String aadharNo) {
-		this.aadharNo = aadharNo;
-	}
 	
 	
 	

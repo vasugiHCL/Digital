@@ -39,14 +39,14 @@ public class CustomerControllerTest {
 		customer.setLastName("raj");
 		customer.setGender("Male");
 		customer.setDob("1990-02-10");
-		customer.setAadharNo("6760938462");
+		
 		
 		customerDto=new CustomerDto();
 		customerDto.setFirstName("Ram");
 		customerDto.setLastName("raj");
 		customerDto.setGender("Male");
 		customerDto.setDob("1990-02-10");
-		customerDto.setAadharNo("6760938462");
+
 		
 		Mockito.when(customerService.addCustomer(customerDto)).thenReturn(customer);
 		ResponseEntity<ResponseDto> response=customerControl.addCustomer(customerDto);

@@ -8,5 +8,7 @@ import com.digital.entity.Reference;
 
 @Repository
 public interface ReferenceRepo extends JpaRepository<Reference, Long>{
+	
+	public Reference findByCustomerId(Long customerId);
 
 }

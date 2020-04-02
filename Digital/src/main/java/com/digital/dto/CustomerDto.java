@@ -5,7 +5,6 @@ public class CustomerDto {
 	private String firstName;
 	private String lastName;
 	private String dob;
-	private String aadharNo;
 	private String gender;
 	public String getFirstName() {
 		return firstName;
@@ -25,12 +24,7 @@ public class CustomerDto {
 	public void setDob(String dob) {
 		this.dob = dob;
 	}
-	public String getAadharNo() {
-		return aadharNo;
-	}
-	public void setAadharNo(String aadharNo) {
-		this.aadharNo = aadharNo;
-	}
+	
 	public String getGender() {
 		return gender;
 	}

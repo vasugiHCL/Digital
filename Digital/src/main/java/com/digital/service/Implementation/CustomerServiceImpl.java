@@ -18,8 +18,9 @@ public class CustomerServiceImpl implements CustomerService{
 
 	@Override
 	public Customer addCustomer(CustomerDto customerdto) throws CustomerNotFoundException{
-		Customer customer=new Customer(customerdto.getFirstName(),customerdto.getLastName(),customerdto.getDob(),customerdto.getGender(),
-				customerdto.getAadharNo());
+		Customer customer=new Customer(customerdto.getFirstName(),customerdto.getLastName(),customerdto.getDob(),customerdto.getGender());
+		
+		
 		return repo.save(customer);
 	}
 

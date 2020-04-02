@@ -18,16 +18,15 @@ public class Reference {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long uniqueId;
 	private Long customerId;
-	private String aadharNo;
 	private String firstName;
 	private String lastName;
 	private String dob;
 	private String gender;
 	
-	public Reference(Long customerId, String aadharNo, String firstName, String lastName, String dob, String gender) {
+	public Reference(Long customerId,String firstName, String lastName, String dob, String gender) {
 		super();
 		this.customerId = customerId;
-		this.aadharNo = aadharNo;
+		
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.dob = dob;
@@ -53,14 +52,6 @@ public class Reference {
 
 	public void setCustomerId(Long customerId) {
 		this.customerId = customerId;
-	}
-
-	public String getAadharNo() {
-		return aadharNo;
-	}
-
-	public void setAadharNo(String aadharNo) {
-		this.aadharNo = aadharNo;
 	}
 
 	public String getFirstName() {
