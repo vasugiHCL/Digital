@@ -1,9 +1,6 @@
 package com.digital.service.Implementation;
 
 import java.util.Optional;
-
-import org.aspectj.weaver.ast.And;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,15 +10,12 @@ import com.digital.entity.Customer;
 import com.digital.entity.Reference;
 import com.digital.exception.CustomerNotFoundException;
 import com.digital.repository.CustomerRepo;
-import com.digital.repository.FileUploadRepo;
 import com.digital.repository.ReferenceRepo;
 import com.digital.service.DigitalService;
 
 @Service
 public class DigitalServiceImpl implements DigitalService{
 	
-	@Autowired
-	DigitalService digitalService;
 	
 	@Autowired
 	CustomerRepo customerRepo;
@@ -30,7 +24,7 @@ public class DigitalServiceImpl implements DigitalService{
 	ReferenceRepo repo;
 
 	@Override
-	public Reference verifyCustomer(Long customerId,ReferenceDto reference) {
+	public ResponseDto verifyCustomer(Long customerId,ReferenceDto reference) {
 		Optional<Customer> customer=customerRepo.findById(customerId);
 		
 		if(!customer.isPresent()){
@@ -50,13 +44,17 @@ public class DigitalServiceImpl implements DigitalService{
 			 response.setMessage("EV verfication done successfully");
 			response.setStatusCode(200);
 		
-			repo.save(ref);
+		 return response;
 			
 		}
 		else {
 			
 			ResponseDto response=new ResponseDto();
+			response.setMessage("the details are wrong,go to url customer/upload");
+			response.setStatusCode(4003);
 			
+			
+			return response;
 		}
 		
 	}

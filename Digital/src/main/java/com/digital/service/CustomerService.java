@@ -6,6 +6,6 @@ import com.digital.exception.CustomerNotFoundException;
 
 public interface CustomerService {
 	
-	Customer addCustomer(CustomerDto customerdto)throws CustomerNotFoundException;
+	public Customer addCustomer(CustomerDto customerdto)throws CustomerNotFoundException;
 
 }

@@ -36,7 +36,7 @@ public class CustomerController {
 	}
 	
 	@PostMapping(value="customers/fileUpload")
-	public ResponseEntity<ResponseDto>fileUpload(@RequestBody FileUploadDto filedto){
+	public ResponseEntity<ResponseDto>fileUpload(@RequestBody FileUploadDto filedto)throws CustomerNotFoundException{
 		FileUpload file=fs.fileUpload(filedto);
 		ResponseDto response=new ResponseDto();
 		response.setMessage("File Uploaded Successfully");
