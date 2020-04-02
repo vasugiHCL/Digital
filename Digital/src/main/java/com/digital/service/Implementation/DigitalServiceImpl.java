@@ -9,6 +9,7 @@ import com.digital.dto.ResponseDto;
 import com.digital.entity.Customer;
 import com.digital.entity.Reference;
 import com.digital.exception.CustomerNotFoundException;
+import com.digital.exception.DetailsNotMatchException;
 import com.digital.repository.CustomerRepo;
 import com.digital.repository.ReferenceRepo;
 import com.digital.service.DigitalService;
@@ -23,8 +24,9 @@ public class DigitalServiceImpl implements DigitalService{
 	@Autowired
 	ReferenceRepo repo;
 
+	
 	@Override
-	public ResponseDto verifyCustomer(Long customerId,ReferenceDto reference) {
+	public ResponseDto verifyCustomer(Long customerId,ReferenceDto reference)throws DetailsNotMatchException {
 		Optional<Customer> customer=customerRepo.findById(customerId);
 		
 		if(!customer.isPresent()){
@@ -42,7 +44,7 @@ public class DigitalServiceImpl implements DigitalService{
 			
 			ResponseDto response=new ResponseDto();
 			 response.setMessage("EV verfication done successfully");
-			response.setStatusCode(200);
+			response.setStatusCode(2003);
 		
 		 return response;
 			

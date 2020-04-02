@@ -3,13 +3,17 @@ package com.digital.web;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 
 import com.digital.dto.CustomerDto;
 import com.digital.dto.FileUploadDto;
+import com.digital.dto.ReferenceDto;
 import com.digital.dto.ResponseDto;
 import com.digital.entity.Customer;
 import com.digital.entity.FileUpload;
@@ -28,9 +32,9 @@ public class CustomerController {
 	
 	@PostMapping(value="customers/addcustomer")
 	public ResponseEntity<ResponseDto> addCustomer(@RequestBody CustomerDto customerdto)throws CustomerNotFoundException{
-		Customer customer=cs.addCustomer(customerdto);
+		cs.addCustomer(customerdto);
 		ResponseDto response=new ResponseDto();
-		response.setMessage("Customer added successfully");
+		response.setMessage("Customer Appication added successfully");
 		response.setStatusCode(2003);
 		return new ResponseEntity<ResponseDto>(response,HttpStatus.CREATED);
 	}
@@ -40,9 +44,13 @@ public class CustomerController {
 		FileUpload file=fs.fileUpload(filedto);
 		ResponseDto response=new ResponseDto();
 		response.setMessage("File Uploaded Successfully");
-		response.setStatusCode(2003);
+		response.setStatusCode(2003); 
 		return new ResponseEntity<ResponseDto>(response,HttpStatus.CREATED);
 	}
 	
-
+	//@GetMapping(value="customerId/verification/{customerId}")
+	//public ResponseEntity<ResponseDto>verification(@RequestParam Long customerId,@RequestParam ReferenceDto refernce){
+		
+	
+	
 }
